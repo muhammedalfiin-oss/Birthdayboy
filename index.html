@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Birthday Wishes for Rayan Bapiya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #ffe6f0, #e6f7ff);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    h1 {
+      color: #ff3399;
+      font-size: 1.8em;
+      margin: 20px;
+    }
+    .message {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.6em;
+      color: #cc0066;
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 90%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+    .play-button {
+      margin-bottom: 0;
+    }
+    .play-button button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #ff3399;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .gallery {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      height: 80vh;
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .footer {
+      margin: 30px;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .heart {
+      position: fixed;
+      bottom: -30px;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatUp 6s infinite ease-in;
+      opacity: 0.7;
+      z-index: 0;
+    }
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0.7; }
+      100% { transform: translateY(-600px) rotate(45deg); opacity: 0; }
+    }
+
+    @keyframes zoomPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glitchFlash {
+      0%, 100% { filter: none; }
+      10% { filter: brightness(1.2) contrast(1.2); }
+      20% { filter: hue-rotate(20deg); }
+      30% { filter: none; }
+    }
+
+    .active {
+      animation: zoomPulse 4s infinite ease-in-out, glitchFlash 6s infinite ease-in-out;
+    }
+
+    .popper, .star {
+      position: fixed;
+      top: -20px;
+      font-size: 18px;
+      animation: fallDown 5s linear forwards;
+      z-index: 2;
+    }
+    @keyframes fallDown {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bgmusic" loop>
+    <source src="https://od.lk/s/MjJfMzQ3MTI3MDZf/bdaysong.mp3" type="audio/mpeg">
+  </audio>
+
+  <h1>wishing you many more happy returns of the day 🥳 🎉 ❤️♥️✨</h1>
+  <div class="message">
+    <p>To my Dear <strong>Bapiya</strong> konichiwa 🥳♥️✨♾️</p>
+    <p>May Allah bless u & give health, wealth & long love hayyathi ✨💕🤞🏻, and all ur wishes come true.</p>
+    <p>Ur always a special person to me, my dear. A big special person in my book story ♥️✨🤞🏻</p>
+    <p>I'm lucky to have u Bapiya. I'm always there for u even if I'm far too.</p>
+    <p>Our bond will be there forever ♾️ ❤️ insha'Allah... Ameen</p>
+  </div>
+
+  <div class="play-button">
+    <button onclick="startCelebration()">🎶 Tap Bday Boy 🥳🎉</button>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <img src="image1.jpg">
+    <img src="image2.jpg">
+    <img src="image3.jpg">
+    <img src="image4.jpg">
+    <img src="image5.jpg">
+    <img src="image6.jpg">
+    <img src="image7.jpg">
+    <img src="image8.jpg">
+    <img src="image9.jpg">
+    <img src="image10.jpg">
+    <img src="image11.jpg">
+    <img src="image12.jpg">
+  </div>
+
+  <div class="footer">
+    — With love, Aalfin 💕
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+    setInterval(createHeart, 500);
+
+    function createPopper() {
+      const popper = document.createElement("div");
+      popper.className = "popper";
+      popper.innerText = "🎉";
+      popper.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(popper);
+      setTimeout(() => popper.remove(), 5000);
+    }
+
+    function createStar() {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.innerText = "✨";
+      star.style.left = Math.random() * window.innerWidth + "px";
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 5000);
+    }
+
+    function startCelebration() {
+      const audio = document.getElementById("bgmusic");
+      audio.play().catch(() => {
+        document.body.addEventListener("click", () => audio.play(), { once: true });
+      });
+
+      setInterval(createPopper, 300);
+      setInterval(createStar, 500);
+
+      const slides = document.querySelectorAll("#gallery img");
+      let current = 0;
+
+      slides[current].style.opacity = 1;
+      slides[current].classList.add("active");
+
+      setInterval(() => {
+        slides[current].style.opacity = 0;
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].style.opacity = 1;
+        slides[current].classList.add("active");
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
